@@ -19,7 +19,7 @@ const Header = () => {
         <p className="text-lg leading-relaxed text-gray-300 space-y-2">
           Skilled{" "}
           <span className="font-semibold text-white">Full Stack Developer</span>{" "}
-          with <span className="font-semibold text-white">1.6+ years</span> of
+          with <span className="font-semibold text-white">2.8+ years</span> of
           experience in creating efficient and maintainable web 
           applications. Proficient in front-end and back-end development, with
           expertise in{" "}
