@@ -1,50 +1,64 @@
 import { ExternalLink, Github } from "lucide-react";
+
 const projects = [
-  
- 
   {
-    title: "LearnAuth",
-    link: "https://learnauthen.onrender.com/",
-    github: "https://github.com/tarunattuluri19/LearnAuth",
-    // image: Nearby,
-    tech: ["React", "Node.js", "MongoDB"],
-    description: `–	A full-stack MERN application with authentication features (sign up, log in, log out) and protected routes using JWT for secure user access`,
+    title: "Realdevs - Portfolio Showcase Platform",
+    link: "https://realdevs.vercel.app/",
+    github: "https://github.com/tarunattuluri19/realdevs",
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "Redis", "Puppeteer"],
+    description: `A full-stack portfolio and projects showcase platform built with modern technologies. Features automated screenshot generation using Puppeteer, real-time trending calculations with Redis-backed cron jobs, and engagement tracking (likes/views). Demonstrates advanced backend processing and real-time data management.`,
   },
- 
+  {
+    title: "LearnAuth - Authentication & Authorization",
+    link: "https://learnauth.onrender.com/",
+    github: "https://github.com/tarunattuluri19/LearnAuth",
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "REST APIs"],
+    description: `Full-stack MERN application showcasing secure authentication best practices. Implements sign-up, login, logout with JWT-protected routes and secure token management. Demonstrates role-based access control and modern web security patterns.`,
+  },
+  {
+    title: "Patient Management System",
+    link: "https://patient-management-demo.onrender.com/",
+    github: "https://github.com/tarunattuluri19/patient-management",
+    tech: ["Spring Boot", "React", "PostgreSQL", "Microservices", "JWT Auth"],
+    description: `Enterprise-grade healthcare management platform integrating Spring Boot microservices with React frontend. Features patient records management, appointment scheduling, medical history tracking, and role-based access control with SSO. Showcases full-stack architecture and security best practices.`,
+  },
 ];
 
-const ProjectCard = ({ project }) => (
-  <div className="group border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300">
-    <div className="relative aspect-video overflow-hidden">
-      {/* <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-      /> */}
+const ProjectCard = ({ project, index }) => (
+  <div
+    className="group border border-gray-200 dark:border-white/10 rounded-xl overflow-hidden hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-500 hover-lift animate-slideInUp bg-white dark:bg-gray-900"
+    style={{ animationDelay: `${index * 0.1}s` }}
+  >
+    <div className="relative h-2 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 overflow-hidden">
+      <div className="absolute inset-0 animate-shimmer"></div>
     </div>
 
     <div className="p-6 space-y-4">
-      <h3 className="text-xl font-bold text-white">{project.title}</h3>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+        {project.title}
+      </h3>
 
       <div className="flex flex-wrap gap-2">
         {project.tech.map((tech) => (
           <span
             key={tech}
-            className="text-xs px-2 py-1 rounded-full border border-white/20 text-gray-300"
+            className="text-xs px-3 py-1 rounded-full border border-gray-300 dark:border-white/20 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors"
           >
             {tech}
           </span>
         ))}
       </div>
 
-      <p className="text-gray-400 leading-relaxed">{project.description}</p>
+      <p className="text-gray-700 dark:text-gray-400 leading-relaxed group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors">
+        {project.description}
+      </p>
 
-      <div className="flex items-center gap-4 pt-2">
+      <div className="flex items-center gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">
         <a
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+          className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium"
         >
           <ExternalLink size={18} />
           <span>Live Demo</span>
@@ -53,10 +67,10 @@ const ProjectCard = ({ project }) => (
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+          className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium"
         >
           <Github size={18} />
-          <span>Source Code</span>
+          <span>Code</span>
         </a>
       </div>
     </div>
@@ -65,33 +79,18 @@ const ProjectCard = ({ project }) => (
 
 const Projects = () => {
   return (
-    <div className="py-12">
-      <div className="text-center mb-12">
-        <h2 className="text-2xl font-bold text-white mb-4">
+    <div className="py-16">
+      <div className="animate-slideInDown">
+        <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           Featured Projects
-        </h2>
-
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          A collection of projects showcasing my expertise in full-stack
-          development, from interactive web applications to mobile solutions.{" "}
-          <a
-            href="https://github.com/tarunattuluri19/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" underline text-white inline-flex items-center"
-          >
-            <span className="font-semibold"> More projects</span>
-
-            <span className="ml-1">
-              <ExternalLink size={18} />
-            </span>
-          </a>
+        </h1>
+        <p className="text-lg text-gray-700 dark:text-gray-400 mb-12">
+          Showcasing full-stack applications built with modern technologies and enterprise patterns
         </p>
       </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={project.title} project={project} index={index} />
         ))}
       </div>
     </div>

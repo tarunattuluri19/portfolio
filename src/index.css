@@ -2,7 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: #000;
-    color: #fff;
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark mode overrides */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.light {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+/* Smooth transitions for all animations */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Custom hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
 }

@@ -12,10 +12,10 @@ const edu = [
 const Education = () => {
   const [isOpen, setIsOpen] = useState(null);
   return (
-    <>
-      <h5 className="mb-2 font-semibold text-xl lg:text-2xl tracking-tight">
+    <div className="py-16 animate-slideInUp">
+      <h2 className="mb-8 font-bold text-3xl lg:text-4xl text-gray-900 dark:text-white">
         Education
-      </h5>
+      </h2>
       <div>
         {edu.map((e, index) => {
           return (
@@ -29,7 +29,7 @@ const Education = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
