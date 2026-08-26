@@ -4,7 +4,7 @@ const SocialLinks = () => {
   const socialLinks = [
     {
       icon: Mail,
-      href: "mailto:tarunattuluri19@gmail.com",
+      href: "mailto:tarun.attuluri19102001@gmail.com",
       label: "Email",
     },
     {

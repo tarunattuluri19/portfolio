@@ -2,25 +2,11 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Realdevs - Portfolio Showcase Platform",
-    link: "https://realdevs.vercel.app/",
-    github: "https://github.com/tarunattuluri19/realdevs",
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "Redis", "Puppeteer"],
-    description: `A full-stack portfolio and projects showcase platform built with modern technologies. Features automated screenshot generation using Puppeteer, real-time trending calculations with Redis-backed cron jobs, and engagement tracking (likes/views). Demonstrates advanced backend processing and real-time data management.`,
-  },
-  {
-    title: "LearnAuth - Authentication & Authorization",
-    link: "https://learnauth.onrender.com/",
-    github: "https://github.com/tarunattuluri19/LearnAuth",
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "JWT", "REST APIs"],
-    description: `Full-stack MERN application showcasing secure authentication best practices. Implements sign-up, login, logout with JWT-protected routes and secure token management. Demonstrates role-based access control and modern web security patterns.`,
-  },
-  {
-    title: "Patient Management System",
+    title: "Patient Management",
     link: "https://patient-management-demo.onrender.com/",
     github: "https://github.com/tarunattuluri19/patient-management",
-    tech: ["Spring Boot", "React", "PostgreSQL", "Microservices", "JWT Auth"],
-    description: `Enterprise-grade healthcare management platform integrating Spring Boot microservices with React frontend. Features patient records management, appointment scheduling, medical history tracking, and role-based access control with SSO. Showcases full-stack architecture and security best practices.`,
+    tech: ["Kafka", "Java", "Spring Boot", "SQL", "JWT", "RESTful APIs", "ReactJS", "Redux"],
+    description: `A healthcare management system for managing patients, secure patient access, medical records, and appointment bookings through a microservices architecture.`,
   },
 ];
 

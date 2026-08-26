@@ -3,17 +3,17 @@ import { createContext, useState, useContext, useEffect } from "react";
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     // Check localStorage on mount
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
+    if (savedTheme === "dark" || savedTheme === "light") {
       setIsDark(savedTheme === "dark");
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
     } else {
-      // Default to dark
-      document.documentElement.classList.add("dark");
+      // Default to light
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 

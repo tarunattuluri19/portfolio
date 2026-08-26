@@ -8,27 +8,28 @@ const exp = [
     role: "Software Engineer",
     duration: "September 2023 - Present",
     description: `Project: Societe Generale / Oxford University Press
-Technologies: Java 17, ReactJS, Spring Boot, Microservices, REST APIs, PostgreSQL, JUnit5, Kafka, Docker, AWS
+  Technologies: Java 17, ReactJS, Redux, Spring Boot, Microservices, REST APIs, PostgreSQL, JUnit5, Kafka, Docker, AWS
 
-• Developed an authentication microservice using ReactJS and Spring Boot with role-based hierarchy for services and dependent platforms, utilizing Redux as primary state management
-• Full-Stack developer for Societe Generale client project: implemented modals, bootstrap components, popups, hovers, tables, pagination and advanced UI features on frontend; RESTful APIs and optimized CRUD operations on backend
-• Completed user-stories and tickets, increasing development velocity by 30% throughout sprints
-• Optimized frontend page loading by 40% through code optimization and debugging, achieving 70% client satisfaction rate
-• Developed and implemented role-based access control (RBAC) for applications using Single-Sign-On (SSO)
-• Implemented JWT and Auth0 authentication systems with best security practices for secure login redirections
-• Gained hands-on experience with CI/CD pipelines and Git version control for collaborative development`,
+  • Developed authentication microservices using Spring Boot, ReactJS, Redux, JWT, and SSO for secure role-based enterprise access
+  • Built and enhanced scalable full-stack applications with RESTful APIs, optimized CRUD operations, pagination, tables, modals, and responsive UI components
+  • Integrated Auth0 and JWT-based authentication mechanisms for secure login flows and authorization management
+  • Leveraged Claude Code and GitHub Copilot to accelerate debugging, feature implementation, and unit test generation
+  • Improved sprint delivery velocity by 30% through timely completion of user stories and Agile collaboration
+  • Worked with Docker and CI/CD pipelines using Git and Jenkins for streamlined deployment and release processes
+  • Engineered a unified ReactJS/Redux portal by consolidating three enterprise applications into one interface for Société Générale identity and access management
+  • Developed Spring Boot microservices and REST APIs for production access requests across Unix, Windows, Sybase, Azure, and AWS environments
+  • Built secure role-based workflows for request creation, approvals, and access provisioning across cross-functional teams
+  • Integrated enterprise APIs to automate request routing, approval workflows, and access provisioning across distributed systems
+  • Optimized ReactJS application performance using Redux and React Router, reducing page load time by 40%
+  • Implemented Kafka-based asynchronous communication between services for scalable event-driven workflows`,
   },
   {
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s",
     company: "Cognizant",
-    role: "Intern - Full Stack Developer",
+    role: "Full Stack Intern",
     duration: "January 2023 - August 2023",
-    description: `• Trained on MERN (MongoDB, Express, React, Node.js) and Java tech stack fundamentals
-• Developed software solutions for clients in healthcare and finance sectors
-• Collaborated with senior developers to create an online banking system enabling users to manage accounts, transfer funds, and pay bills
-• Gained expertise in database design, REST API development, and frontend component architecture
-• Awarded Best Techie Award among 200 interns for outstanding performance and technical excellence
-• Worked on agile development practices and participated in daily standup meetings and sprint planning`,
+    description: `• Developed a proof of concept for Cognizant's internal business group using external APIs, Java, Spring Boot, AWS, REST APIs, authentication, and authorization
+  • Implemented a reliable and scalable Employee Management System during the internship at Cognizant`,
   },
 ];
 
@@ -43,7 +44,7 @@ const WorkExp = () => {
       <div className="space-y-4">
         {exp.map((e, index) => (
           <Card
-            key={e.company}
+            key={`${e.company}-${e.role}`}
             index={index}
             data={e}
             isOpen={isOpen}

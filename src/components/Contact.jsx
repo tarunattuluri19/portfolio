@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ContactPage = () => {
   const [copySuccess, setCopySuccess] = useState("");
-  const email = "tarunattuluri19@gmail.com";
+  const email = "tarun.attuluri19102001@gmail.com";
   const linkedIn = "https://www.linkedin.com/in/tarunattuluri/";
 
   const handleCopyEmail = async () => {

@@ -1,4 +1,4 @@
-import { Award, Star } from "lucide-react";
+import { Award, Cloud } from "lucide-react";
 
 const achievements = [
   {
@@ -8,10 +8,10 @@ const achievements = [
     color: "from-purple-600 to-blue-600",
   },
   {
-    icon: Star,
-    title: "5-Star HackerRank Rating",
-    description: "Earned 5-star rating in Problem Solving and Java on HackerRank",
-    color: "from-orange-600 to-red-600",
+    icon: Cloud,
+    title: "3X AWS Certified",
+    description: "AWS Certified Developer - Associate, AI Practitioner, and Cloud Practitioner",
+    color: "from-orange-500 to-yellow-500",
   },
 ];
 
