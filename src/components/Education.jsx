@@ -4,9 +4,9 @@ const edu = [
   {
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ77atGdoT1m07zq21unug5T5h7WRYneJi3w&s",
     company: "Madanapalle Institute of Technology and Science",
-    role: "B.Tech / B.E",
-    duration: "2019 - 2023",
-    description: "B.Tech / B.E in Electronic and Communication Engg",
+    role: "B.Tech in Electronics and Communication Engineering",
+    duration: "August 2019 - May 2023",
+    description: "CGPA: 8.23",
   },
 ];
 const Education = () => {

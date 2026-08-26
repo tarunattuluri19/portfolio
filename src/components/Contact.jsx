@@ -1,9 +1,9 @@
-import { Mail, Linkedin, Copy, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Copy, ExternalLink, Send } from "lucide-react";
 import { useState } from "react";
 
 const ContactPage = () => {
   const [copySuccess, setCopySuccess] = useState("");
-  const email = "tarunattuluri19@gmail.com";
+  const email = "tarun.attuluri19102001@gmail.com";
   const linkedIn = "https://www.linkedin.com/in/tarunattuluri/";
 
   const handleCopyEmail = async () => {
@@ -14,6 +14,18 @@ const ContactPage = () => {
     } catch (err) {
       setCopySuccess("Failed to copy");
     }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name");
+    const senderEmail = formData.get("senderEmail");
+    const message = formData.get("message");
+    const subject = `Portfolio contact from ${name}`;
+    const body = `Name: ${name}\nEmail: ${senderEmail}\n\n${message}`;
+
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -27,10 +39,80 @@ const ContactPage = () => {
         </p>
 
         <div className="space-y-6">
+          <div
+            className="p-6 rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 animate-slideInUp"
+            style={{ animationDelay: "0.1s" }}
+          >
+            <div className="flex items-center mb-6">
+              <Send className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-3" />
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Send a Message
+              </h2>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    autoComplete="name"
+                    className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white outline-none focus:border-purple-500 dark:focus:border-purple-400"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="senderEmail"
+                    className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="senderEmail"
+                    name="senderEmail"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white outline-none focus:border-purple-500 dark:focus:border-purple-400"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="6"
+                  className="w-full resize-y rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white outline-none focus:border-purple-500 dark:focus:border-purple-400"
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600"
+              >
+                <Send className="h-5 w-5" />
+                Open Email App
+              </button>
+            </form>
+          </div>
+
           {/* Email Section */}
           <div
             className="group p-6 rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300 hover-lift animate-slideInUp"
-            style={{ animationDelay: "0.1s" }}
+            style={{ animationDelay: "0.2s" }}
           >
             <div className="flex items-center mb-4">
               <Mail className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-3" />
@@ -63,7 +145,7 @@ const ContactPage = () => {
           {/* LinkedIn Section */}
           <div
             className="group p-6 rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover-lift animate-slideInUp"
-            style={{ animationDelay: "0.2s" }}
+            style={{ animationDelay: "0.3s" }}
           >
             <div className="flex items-center mb-4">
               <Linkedin className="w-6 h-6 text-blue-600 dark:text-blue-400 mr-3" />
@@ -87,7 +169,7 @@ const ContactPage = () => {
           {/* Contact Message */}
           <div
             className="text-center mt-12 p-6 rounded-xl bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 border border-purple-200 dark:border-purple-800 animate-slideInUp"
-            style={{ animationDelay: "0.3s" }}
+            style={{ animationDelay: "0.4s" }}
           >
             <p className="text-lg text-gray-700 dark:text-gray-300 font-medium">
               Feel free to reach out! I'm excited to discuss new opportunities, collaborate on projects, or just chat about tech.
